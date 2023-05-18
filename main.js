@@ -30,9 +30,9 @@ let coffees = [
 
 //Tables are a little old school, you need to refactor the code so that each coffee is displayed in a div that contains a heading displaying the coffee name, and the type of roast in a paragraph. Don't display the ids, these are only for our application's internal use
 function renderCoffee(coffee){
-    let html = '<div class="coffee row">';
-        html += '<h1>' + coffee.name +'</h1>';
-        html += '<p class="opacity">'  + coffee.roast + '</p>';
+    let html = '<div class="coffee">';
+        html += '<h1 class="col-left">' + coffee.name +'</h1>';
+        html += '<p class="col-right opacity-75 fw-bold">'  + coffee.roast + '</p>';
         html += '</div>';
         return html;
 }
@@ -88,42 +88,45 @@ window.addEventListener("DOMContentLoaded", function(){
     document.getElementById('roast-selection').addEventListener("change", updateCoffees)
 });
 
+
 //This adds functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
-(document).ready(function() {
-    ("button").click(function() {
-        ("#Find").val("");
-        update(words)
-    });
+// (document).ready(function() {
+//     ("button").click(function() {
+//         ("#Find").val("");
+//         update(words)
+//     });
+//
+//     let words = coffees.name;
+//
+//     let selection = $(".selection"),
+//         input = $("input[type=search]"),
+//         label = $("label");
+//
+//     function update(words) {
+//         selection.html("");
+//         $.each(words, function(i, word) {
+//             selection.append("<option value='" + word + "'>" + word + "</option>");
+//         });
+//         label.text("Results:" + selection.find("option").length);
+//     }
+//
+//     input.on("input", function(e) {
+//         let val = e.target.value,
+//             keys = val.split(/\s+/),
+//             html = $.map(keys, function(key) {
+//                 return $.grep(words, function(word) {
+//                     return word === key
+//                         || word.slice(0, key.length) === key
+//                         || word.indexOf(key) > -1
+//                 })
+//             });
+//
+//         console.log(html);
+//         update(html);
+//     });
+//
+//     update(words);
+//
+//
+// });
 
-    let words = coffees.name;
-
-    let selection = $(".selection"),
-        input = $("input[type=search]"),
-        label = $("label");
-
-    function update(words) {
-        selection.html("");
-        $.each(words, function(i, word) {
-            selection.append("<option value='" + word + "'>" + word + "</option>");
-        });
-        label.text("Results:" + selection.find("option").length);
-    }
-
-    input.on("input", function(e) {
-        let val = e.target.value,
-            keys = val.split(/\s+/),
-            html = $.map(keys, function(key) {
-                return $.grep(words, function(word) {
-                    return word === key
-                        || word.slice(0, key.length) === key
-                        || word.indexOf(key) > -1
-                })
-            });
-
-        console.log(html);
-        update(html);
-    });
-
-    update(words);
-
-});
