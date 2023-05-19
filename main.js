@@ -61,23 +61,26 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (coffee.name === selectedRoast) {
+            filteredCoffees.push(coffee);
         } else if (coffee.roasted === selectedRoast) {
             filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
-function updateAllCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
-    let selectedRoast = roastSelection.value;
-    let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
-        if (coffee.roasted === selectedRoast) {
-            filteredCoffees.push(coffee);
-        }
-    });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
-}
+// function updateAllCoffees(e) {
+//     e.preventDefault(); // don't submit the form, we just want to update the data
+//     let selectedRoast = roastSelection.value;
+//     let filteredCoffees = [];
+//     coffees.forEach(function(coffee) {
+//         if (coffee.name === selectedRoast) {
+//             filteredCoffees.push(coffee);
+//         }
+//     });
+//     tbody.innerHTML = renderCoffees(filteredCoffees);
+// }
+
 
 // let submitButton = document.querySelector('#submit');
 
@@ -89,44 +92,6 @@ window.addEventListener("DOMContentLoaded", function(){
 });
 
 
-//This adds functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
-// (document).ready(function() {
-//     ("button").click(function() {
-//         ("#Find").val("");
-//         update(words)
-//     });
-//
-//     let words = coffees.name;
-//
-//     let selection = $(".selection"),
-//         input = $("input[type=search]"),
-//         label = $("label");
-//
-//     function update(words) {
-//         selection.html("");
-//         $.each(words, function(i, word) {
-//             selection.append("<option value='" + word + "'>" + word + "</option>");
-//         });
-//         label.text("Results:" + selection.find("option").length);
-//     }
-//
-//     input.on("input", function(e) {
-//         let val = e.target.value,
-//             keys = val.split(/\s+/),
-//             html = $.map(keys, function(key) {
-//                 return $.grep(words, function(word) {
-//                     return word === key
-//                         || word.slice(0, key.length) === key
-//                         || word.indexOf(key) > -1
-//                 })
-//             });
-//
-//         console.log(html);
-//         update(html);
-//     });
-//
-//     update(words);
-//
-//
-// });
+// This adds functionality to update the displayed coffee as the user types into the search box, or as soon as they select an option from the select.
+
 
