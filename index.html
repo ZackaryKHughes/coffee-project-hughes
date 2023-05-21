@@ -19,26 +19,26 @@
     <!--    CSS LINK-->
     <link rel="stylesheet" href="style.css" />
 
-    <title>Whatever You Want Coffee!</title>
+    <title>Last Minute Coffee!</title>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col"><h1>Coffee!</h1></div>
+        <div class="col"><h1>Last Minute Coffee!</h1></div>
 
         <div class="container">
           <div class="row">
-            <div class="col-6 col-left">
+            <div id="coffee-container" class="d-flex col-8 flex-wrap">
               <div id="coffees"></div>
             </div>
-            <div class="col-6 col-right">
-              <form class="form-inline">
+            <div class="col-4 col-right">
+              <form class="form-inline fw-bold">
                 <label for="roast-selection" class="my-1 mr-2"
                   >Preference</label
                 >
                 <select
                   id="roast-selection"
-                  class="form-select form-select-md"
+                  class="form-select form-select-md bg-transparent fw-bold"
                   aria-label=".form-select-sm example"
                 >
                   <option class="all">All</option>
@@ -48,54 +48,50 @@
                 </select>
 
                 <label class="my-1 mr-2" for="coffee-input">Coffee Name</label>
-                <div class="input-group mb-3">
+                <div class="input-group mb-5">
                   <input
                     type="search"
                     id="coffee-input"
-                    class="form-control"
+                    class="form-control bg-transparent fw-bold"
                     placeholder="What do you want?"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                   />
-                </div>
-                <div class="d-grid gap-2">
-                  <button class="btn btn-primary" id="btn1" type="button">
-                    Submit
-                  </button>
                 </div>
               </form>
 
               <h1>Add A Coffee</h1>
 
               <form class="form-inline">
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref3"
-                  >Roast</label
-                >
+                <label class="my-1 mr-2" for="inBoxText">Roast</label>
                 <select
-                  class="form-select form-select-md"
+                  class="form-select form-select-md bg-transparent fw-bold"
                   aria-label=".form-select-sm example"
-                  id="inlineFormCustomSelectPref3"
+                  id="inBoxText"
                 >
-                  <option selected>All</option>
                   <option value="1">Light</option>
                   <option value="2">Medium</option>
                   <option value="3">Dark</option>
                 </select>
-                <label class="my-1 mr-2" for="inlineFormCustomSelectPref4"
-                  >Name</label
-                >
+                <label class="my-1 mr-2" for="user-coffee-name">Name</label>
                 <div class="input-group mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control bg-transparent fw-bold"
                     placeholder="What would you like to add?"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
-                    id="inlineFormCustomSelectPref4"
+                    id="user-coffee-name"
                   />
                 </div>
                 <div class="d-grid gap-2">
-                  <button class="btn btn-primary" type="button">Submit</button>
+                  <button
+                    class="btn btn-secondary bg-dark bg-gradient"
+                    id="submit-custom"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>

@@ -6,16 +6,15 @@
 * {
   box-sizing: border-box;
 }
+
 h1 {
   text-align: center;
 }
-.container {
-  border: 1px solid red;
-}
 
 body {
-  background-color: var(--mainColor);
-  color: var(--userColor);
+  color: burlywood;
+  background-image: url("img/coffee-background.jpg");
+  background-attachment: fixed;
 }
 
 th,
@@ -24,12 +23,6 @@ td {
   border-radius: 5px;
   padding: 5px 10px;
 }
-.col-left {
-  border: 1px solid green;
-}
-.col-right {
-  border: 1px solid blue;
-}
 
 table {
   border-collapse: separate;
@@ -37,4 +30,14 @@ table {
   width: 60px;
   margin: 0;
   padding: 0;
+}
+
+.icon {
+  height: 5em;
+  width: 5em;
+}
+
+#coffee-container {
+  /*width: 100%;*/
+  margin: 0 auto;
 }

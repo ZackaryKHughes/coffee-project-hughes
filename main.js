@@ -1,9 +1,12 @@
 "use strict";
 
 function renderCoffee(coffee) {
-  let html = '<div class="card coffee row">';
-  html += '<h1 class="p-0 flex-wrap">' + coffee.name + "</h1>";
-  html += '<p class="opacity-75 fw-bold p-0">' + coffee.roast + "</p>";
+  let html = '<div class="coffee card bg-dark bg-gradient fw-bold">';
+  html += "<h1 class='card-title'>" + coffee.name + "</h1>";
+  html += '<div class="roastType">';
+  html += '<p class="opacity-75 p-0">' + coffee.roast + "</p>";
+  html +=
+    '<img class="icon col-6" src="img/coffee-icon.webp" alt="Hot Coffee" /></div>';
   html += "</div>";
   return html;
 }
@@ -31,17 +34,18 @@ function updateCoffees(e) {
   });
   display.innerHTML = renderCoffees(filteredCoffees);
 }
-function updateAllCoffees(e) {
+function addCustomCoffee(e) {
   e.preventDefault(); // don't submit the form, we just want to update the data
-  let input = document.getElementById("update");
-  let filter = input.value.toUpperCase();
-  let filteredCoffees = [];
-  coffees.forEach(function (coffee) {
-    if (coffee.name === filter) {
-      filteredCoffees.push(coffee);
-    }
-  });
-  display.innerHTML = renderCoffees(filteredCoffees);
+  let selectedRoast = userRoastSelection.value;
+  let userCoffeeName = document.querySelector("#user-coffee-name").value;
+  let customCoffeeObj = {
+    id: coffees.length + 1,
+    name: userCoffeeName,
+    roast: selectedRoast,
+  };
+  coffees.push(customCoffeeObj);
+
+  display.innerHTML = renderCoffees(coffees);
 }
 
 function coffeeInput() {
@@ -76,8 +80,11 @@ let coffees = [
 let display = document.querySelector("#coffees");
 let sortCoffee = document.querySelector("#coffee-input");
 let roastSelection = document.querySelector("#roast-selection");
+let userRoastSelection = document.querySelector("#user-coffee-name");
+let submitCustomButton = document.querySelector("#submit-custom");
 
 roastSelection.addEventListener("change", updateCoffees);
 sortCoffee.addEventListener("keyup", coffeeInput);
+submitCustomButton.addEventListener("click", addCustomCoffee);
 
 display.innerHTML = renderCoffees(coffees);
