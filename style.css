@@ -17,27 +17,28 @@ body {
   background-attachment: fixed;
 }
 
-th,
-td {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-
-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  width: 60px;
-  margin: 0;
-  padding: 0;
-}
-
 .icon {
   height: 5em;
   width: 5em;
+  float: right;
+  margin-left: 15em;
+}
+
+#coffees {
+  border: 5px solid var(--mainColor);
 }
 
 #coffee-container {
-  /*width: 100%;*/
-  margin: 0 auto;
+  float: left;
+  width: 50%;
+}
+
+.coffee {
+  width: auto;
+}
+
+.roastType {
+  float: left;
+  align-items: flex-end;
+  margin-top: 3em;
 }

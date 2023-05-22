@@ -1,12 +1,13 @@
 "use strict";
 
 function renderCoffee(coffee) {
-  let html = '<div class="coffee card bg-dark bg-gradient fw-bold">';
+  let html =
+    '<div class="coffee bg-dark bg-gradient fw-bold p-0 row flex-wrap">';
   html += "<h1 class='card-title'>" + coffee.name + "</h1>";
-  html += '<div class="roastType">';
-  html += '<p class="opacity-75 p-0">' + coffee.roast + "</p>";
+  html += '<div class="roastType col-4 flex-wrap">';
+  html += '<p class="opacity-75 p-0">' + coffee.roast + "</p></div>";
   html +=
-    '<img class="icon col-6" src="img/coffee-icon.webp" alt="Hot Coffee" /></div>';
+    '<img class="icon col-4" src="img/coffee-icon.webp" alt="Hot Coffee" />';
   html += "</div>";
   return html;
 }
