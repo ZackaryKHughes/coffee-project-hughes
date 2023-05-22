@@ -34,6 +34,7 @@ function updateCoffees(e) {
   });
   display.innerHTML = renderCoffees(filteredCoffees);
 }
+
 function addCustomCoffee(e) {
   e.preventDefault(); // don't submit the form, we just want to update the data
   let selectedRoast = userRoastSelection.value;
