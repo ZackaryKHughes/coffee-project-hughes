@@ -6,35 +6,31 @@
 * {
   box-sizing: border-box;
 }
+.heading {
+  padding: 3em 0;
+}
 
 h1 {
   text-align: center;
 }
 
 body {
-  color: burlywood;
+  color: var(--mainColor);
   background-image: url("img/coffee-background.jpg");
   background-attachment: fixed;
 }
 
 .icon {
   height: 5em;
-  width: 5em;
+  width: 6em;
   float: right;
-  margin-left: 15em;
-}
-
-#coffees {
-  border: 5px solid var(--mainColor);
-}
-
-#coffee-container {
-  float: left;
-  width: 50%;
+  margin-left: 8em;
 }
 
 .coffee {
-  width: auto;
+  width: 50%;
+  flex-wrap: wrap;
+  border: 3px solid var(--mainColor);
 }
 
 .roastType {

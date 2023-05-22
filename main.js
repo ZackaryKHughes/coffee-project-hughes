@@ -1,10 +1,9 @@
 "use strict";
 
 function renderCoffee(coffee) {
-  let html =
-    '<div class="coffee bg-dark bg-gradient fw-bold p-0 row flex-wrap">';
+  let html = '<div class="coffee bg-dark bg-gradient fw-bold p-0">';
   html += "<h1 class='card-title'>" + coffee.name + "</h1>";
-  html += '<div class="roastType col-4 flex-wrap">';
+  html += '<div class="roastType col-4 flex-wrap p-0">';
   html += '<p class="opacity-75 p-0">' + coffee.roast + "</p></div>";
   html +=
     '<img class="icon col-4" src="img/coffee-icon.webp" alt="Hot Coffee" />';
